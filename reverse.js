@@ -1,17 +1,21 @@
 let args = process.argv.slice(2);
 
 const reverse = function(str) {
+  //convert command line args to string, separate words, split into new array
   let string = str.toString().replace(/,/g, " ").split(" ");
-  console.log(string);
   let result = [];
+  //loop through each word forward
   for (let i = 0; i < string.length; i++) {
+    //loop through each character in the word and return it in reverse
     for (let j = string[i].length - 1; j >= 0; j--) {
       result += string[i][j];
     }
+    //add newline after each word
     result += "\n";
   }
   return result;
 };
+
 
 console.log(reverse(args));
 
